@@ -79,16 +79,19 @@
 
 
 
-<meta name="description" content="代码就像音符">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/categories/vue源码分析/index.html">
+<meta name="description" content="Vue源码目录设计Vue.js 的源码都在 src 目录下，其目录结构如下。  1234567src  ├── compiler   # 编译相关  ├── core       # 核心代码 (:我们会重点分析这里面的代码  ├── platforms  # 不同平台的服务支持代码  ├── server     # 服务端渲染  ├── sfc        # .vue 文件解析  └──">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1.1-从入口开始">
+<meta property="og:url" content="http://yoursite.com/2018/06/12/1.1-从入口开始/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="代码就像音符">
+<meta property="og:description" content="Vue源码目录设计Vue.js 的源码都在 src 目录下，其目录结构如下。  1234567src  ├── compiler   # 编译相关  ├── core       # 核心代码 (:我们会重点分析这里面的代码  ├── platforms  # 不同平台的服务支持代码  ├── server     # 服务端渲染  ├── sfc        # .vue 文件解析  └──">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/06/12/1.1-从入口开始/src.png">
+<meta property="og:updated_time" content="2018-06-12T07:14:28.674Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="代码就像音符">
+<meta name="twitter:title" content="1.1-从入口开始">
+<meta name="twitter:description" content="Vue源码目录设计Vue.js 的源码都在 src 目录下，其目录结构如下。  1234567src  ├── compiler   # 编译相关  ├── core       # 核心代码 (:我们会重点分析这里面的代码  ├── platforms  # 不同平台的服务支持代码  ├── server     # 服务端渲染  ├── sfc        # .vue 文件解析  └──">
+<meta name="twitter:image" content="http://yoursite.com/2018/06/12/1.1-从入口开始/src.png">
 
 
 
@@ -118,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/vue源码分析/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/12/1.1-从入口开始/"/>
 
 
 
 
 
-  <title>分类: vue源码分析 | Hexo</title>
+  <title>1.1-从入口开始 | Hexo</title>
   
 
 
@@ -143,7 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -251,83 +254,171 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>vue源码分析<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/12/0-1-准备工作/" itemprop="url">
-              
-                <span itemprop="name">0.1-准备工作</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-12T12:41:52+08:00"
-              content="2018-06-12" >
-          06-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
 
   <article class="post post-type-vue源码分析" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/12/1.1-从入口开始/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="木鸟">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/06/12/1.1-从入口开始/" itemprop="url">
-              
-                <span itemprop="name">1.1-从入口开始</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">1.1-从入口开始</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-12T11:07:29+08:00"
-              content="2018-06-12" >
-          06-12
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-12T11:07:29+08:00">
+                2018-06-12
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue源码分析/" itemprop="url" rel="index">
+                    <span itemprop="name">vue源码分析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Vue源码目录设计"><a href="#Vue源码目录设计" class="headerlink" title="Vue源码目录设计"></a>Vue源码目录设计</h1><p>Vue.js 的源码都在 src 目录下，其目录结构如下。</p>
+<img src="/2018/06/12/1.1-从入口开始/src.png">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">src</span><br><span class="line">  ├── compiler   # 编译相关</span><br><span class="line">  ├── core       # 核心代码 (:我们会重点分析这里面的代码</span><br><span class="line">  ├── platforms  # 不同平台的服务支持代码</span><br><span class="line">  ├── server     # 服务端渲染</span><br><span class="line">  ├── sfc        # .vue 文件解析</span><br><span class="line">  └── shared     # 共享代码</span><br></pre></td></tr></table></figure>
+<h2 id="compiler"><a href="#compiler" class="headerlink" title="compiler"></a>compiler</h2><p>compiler 目录包含 Vue.js 所有编译相关的代码。它包括把模板解析成 ast 语法树，ast 语法树优化，代码生成等功能</p>
+<h2 id="core"><a href="#core" class="headerlink" title="core"></a>core</h2><p>core 目录包含了 Vue.js 的核心代码，包括内置组件、全局 API 封装，Vue 实例化、观察者、虚拟 DOM、工具函数等<br>这是vue.js的核心代码，也是之后重点分析的地方</p>
+<h2 id="platform"><a href="#platform" class="headerlink" title="platform"></a>platform</h2><p>由于Vue.js是跨平台框架，可以在web端运行，也可以在Native客户端上运行(配合weex)，platform目录分别打包成运行在web和weex上的vue代码</p>
+<h2 id="server"><a href="#server" class="headerlink" title="server"></a>server</h2><p>Vue.js2.0支持服务端渲染，所有服务端渲染逻辑会在这个目录下．有些代码是运行在Node.js上，不要和在web端的代码混为一谈</p>
+<h2 id="sfc"><a href="#sfc" class="headerlink" title="sfc"></a>sfc</h2><p>这个目录下的代码会把.vue单文件解析成一个javaScript对象</p>
+<h2 id="shared"><a href="#shared" class="headerlink" title="shared"></a>shared</h2><p>Vue.js(Web端 or 服务端)中的工具方法会定义在这个文件夹内，这些方法会被Vue.js其他的模块共享</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/12/0-1-准备工作/" rel="prev" title="0.1-准备工作">
+                0.1-准备工作 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -335,6 +426,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzI1Mi8xMzc4Ng=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -355,8 +455,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -430,6 +539,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue源码目录设计"><span class="nav-number">1.</span> <span class="nav-text">Vue源码目录设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#compiler"><span class="nav-number">1.1.</span> <span class="nav-text">compiler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#core"><span class="nav-number">1.2.</span> <span class="nav-text">core</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#platform"><span class="nav-number">1.3.</span> <span class="nav-text">platform</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#server"><span class="nav-number">1.4.</span> <span class="nav-text">server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sfc"><span class="nav-number">1.5.</span> <span class="nav-text">sfc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shared"><span class="nav-number">1.6.</span> <span class="nav-text">shared</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -570,6 +695,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -598,6 +727,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

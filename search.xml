@@ -12,9 +12,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[1-从入口开始]]></title>
-    <url>%2F2018%2F06%2F12%2F1-%E4%BB%8E%E5%85%A5%E5%8F%A3%E5%BC%80%E5%A7%8B%2F</url>
-    <content type="text"><![CDATA[开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始 开始开始]]></content>
+    <title><![CDATA[1.1-从入口开始]]></title>
+    <url>%2F2018%2F06%2F12%2F1.1-%E4%BB%8E%E5%85%A5%E5%8F%A3%E5%BC%80%E5%A7%8B%2F</url>
+    <content type="text"><![CDATA[Vue源码目录设计Vue.js 的源码都在 src 目录下，其目录结构如下。 1234567src ├── compiler # 编译相关 ├── core # 核心代码 (:我们会重点分析这里面的代码 ├── platforms # 不同平台的服务支持代码 ├── server # 服务端渲染 ├── sfc # .vue 文件解析 └── shared # 共享代码 compilercompiler 目录包含 Vue.js 所有编译相关的代码。它包括把模板解析成 ast 语法树，ast 语法树优化，代码生成等功能 corecore 目录包含了 Vue.js 的核心代码，包括内置组件、全局 API 封装，Vue 实例化、观察者、虚拟 DOM、工具函数等这是vue.js的核心代码，也是之后重点分析的地方 platform由于Vue.js是跨平台框架，可以在web端运行，也可以在Native客户端上运行(配合weex)，platform目录分别打包成运行在web和weex上的vue代码 serverVue.js2.0支持服务端渲染，所有服务端渲染逻辑会在这个目录下．有些代码是运行在Node.js上，不要和在web端的代码混为一谈 sfc这个目录下的代码会把.vue单文件解析成一个javaScript对象 sharedVue.js(Web端 or 服务端)中的工具方法会定义在这个文件夹内，这些方法会被Vue.js其他的模块共享]]></content>
       <categories>
         <category>vue源码分析</category>
       </categories>
