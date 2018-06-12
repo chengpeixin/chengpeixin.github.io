@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="准备工作及序言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;序什么样的人适合阅读源码？我希望你有最基本javascript的基础，比如闭包，函数柯里化…，并且使用vue做过项目的人 vuejs的版本？目前版本为在github上最新的代码，V2.5.17 多久更新一次？每周都会更新，打算将这个源码解析系列当作长期项目来维护 会不会逐行分析代码？不会，因为这么做会浪费大量时间，一些不重要的函数会选择">
+<meta name="description" content="准备工作及序言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;序什么样的人适合阅读源码？我希望你有最基本javascript的基础，比如闭包，函数柯里化…，使用vue做过项目 vuejs的版本？目前版本为在github上最新的代码，V2.5.17 多久更新一次？每周都会更新，打算将这个源码解析系列当作长期项目来维护 会不会逐行分析代码？不会，这么做会浪费大量时间，不重要的函数会选择性跳过，但大部分">
 <meta name="keywords" content="Vue.js源码分析">
 <meta property="og:type" content="article">
 <meta property="og:title" content="0.1-准备工作">
 <meta property="og:url" content="http://yoursite.com/2018/06/12/0-1-准备工作/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="准备工作及序言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;序什么样的人适合阅读源码？我希望你有最基本javascript的基础，比如闭包，函数柯里化…，并且使用vue做过项目的人 vuejs的版本？目前版本为在github上最新的代码，V2.5.17 多久更新一次？每周都会更新，打算将这个源码解析系列当作长期项目来维护 会不会逐行分析代码？不会，因为这么做会浪费大量时间，一些不重要的函数会选择">
+<meta property="og:description" content="准备工作及序言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;序什么样的人适合阅读源码？我希望你有最基本javascript的基础，比如闭包，函数柯里化…，使用vue做过项目 vuejs的版本？目前版本为在github上最新的代码，V2.5.17 多久更新一次？每周都会更新，打算将这个源码解析系列当作长期项目来维护 会不会逐行分析代码？不会，这么做会浪费大量时间，不重要的函数会选择性跳过，但大部分">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-12T03:15:43.387Z">
+<meta property="og:updated_time" content="2018-06-12T04:41:52.138Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="0.1-准备工作">
-<meta name="twitter:description" content="准备工作及序言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;序什么样的人适合阅读源码？我希望你有最基本javascript的基础，比如闭包，函数柯里化…，并且使用vue做过项目的人 vuejs的版本？目前版本为在github上最新的代码，V2.5.17 多久更新一次？每周都会更新，打算将这个源码解析系列当作长期项目来维护 会不会逐行分析代码？不会，因为这么做会浪费大量时间，一些不重要的函数会选择">
+<meta name="twitter:description" content="准备工作及序言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;序什么样的人适合阅读源码？我希望你有最基本javascript的基础，比如闭包，函数柯里化…，使用vue做过项目 vuejs的版本？目前版本为在github上最新的代码，V2.5.17 多久更新一次？每周都会更新，打算将这个源码解析系列当作长期项目来维护 会不会逐行分析代码？不会，这么做会浪费大量时间，不重要的函数会选择性跳过，但大部分">
 
 
 
@@ -296,7 +296,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-12T11:24:01+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-12T12:41:52+08:00">
                 2018-06-12
               </time>
             
@@ -332,16 +332,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/06/12/0-1-准备工作/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/06/12/0-1-准备工作/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -366,10 +356,10 @@
       
 
       
-        <h2 id="准备工作及序言-nbsp-nbsp-nbsp-nbsp"><a href="#准备工作及序言-nbsp-nbsp-nbsp-nbsp" class="headerlink" title="准备工作及序言&nbsp;&nbsp;&nbsp;&nbsp;"></a>准备工作及序言&nbsp;&nbsp;&nbsp;&nbsp;</h2><h3 id="序"><a href="#序" class="headerlink" title="序"></a>序</h3><p><strong>什么样的人适合阅读源码？</strong><br>我希望你有最基本javascript的基础，比如闭包，函数柯里化…，并且使用vue做过项目的人</p>
+        <h2 id="准备工作及序言-nbsp-nbsp-nbsp-nbsp"><a href="#准备工作及序言-nbsp-nbsp-nbsp-nbsp" class="headerlink" title="准备工作及序言&nbsp;&nbsp;&nbsp;&nbsp;"></a>准备工作及序言&nbsp;&nbsp;&nbsp;&nbsp;</h2><h3 id="序"><a href="#序" class="headerlink" title="序"></a>序</h3><p><strong>什么样的人适合阅读源码？</strong><br>我希望你有最基本javascript的基础，比如闭包，函数柯里化…，使用vue做过项目</p>
 <p><strong>vuejs的版本？</strong><br>目前版本为在github上最新的代码，V2.5.17</p>
 <p><strong>多久更新一次？</strong><br>每周都会更新，打算将这个源码解析系列当作长期项目来维护</p>
-<p><strong>会不会逐行分析代码？</strong><br>不会，因为这么做会浪费大量时间，一些不重要的函数会选择性跳过，但大部分代码还是会说到，主要当大家了解vuejs内部是怎么实现的，给大家提供思路</p>
+<p><strong>会不会逐行分析代码？</strong><br>不会，这么做会浪费大量时间，不重要的函数会选择性跳过，但大部分代码还是会说到</p>
 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>在开始阅读vue源码之前需要做一点准备工作，由于本人的技术能力和精力有限,对编译不太懂，这次的vue源码解析不会涉及到虚拟dom,大致会解析以下核心的几个部分，<code>数据驱动</code>,<code>render</code>,<code>组件化</code>,<code>生命周期</code>，<code>异步组件</code>,<code>vue Router</code>，<code>Vuex</code>,和<code>相应式原理</code>，之所以把响应式原理放到最后是因为会深入解析.</p>
 <ol>
 <li><p>在github下载vueJs的源代码 <a href="https://github.com/vuejs/vue" target="_blank" rel="noopener">点击此处跳转到github</a></p>
@@ -446,9 +436,7 @@
 
   
     <div class="comments" id="comments">
-      <div class="ds-thread" data-thread-key="2018/06/12/0-1-准备工作/"
-           data-title="0.1-准备工作" data-url="http://yoursite.com/2018/06/12/0-1-准备工作/">
-      </div>
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzI1Mi8xMzc4Ng=="></div>
     </div>
 
   
@@ -728,35 +716,36 @@
 
   
 
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"your-duoshuo-shortname"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
 
   
-    
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
+
+
+
+
+	
+
+
+
+
+
   
 
 
 
 
 
-
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
 
 
 
