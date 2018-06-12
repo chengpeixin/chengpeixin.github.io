@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[0.1-准备工作]]></title>
+    <url>%2F2018%2F06%2F12%2F0-1-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C%2F</url>
+    <content type="text"><![CDATA[准备工作及序言&nbsp;&nbsp;&nbsp;&nbsp;序什么样的人适合阅读源码？我希望你有最基本javascript的基础，比如闭包，函数柯里化…，并且使用vue做过项目的人 vuejs的版本？目前版本为在github上最新的代码，V2.5.17 多久更新一次？每周都会更新，打算将这个源码解析系列当作长期项目来维护 会不会逐行分析代码？不会，因为这么做会浪费大量时间，一些不重要的函数会选择性跳过，但大部分代码还是会说到，主要当大家了解vuejs内部是怎么实现的，给大家提供思路 说明在开始阅读vue源码之前需要做一点准备工作，由于本人的技术能力和精力有限,对编译不太懂，这次的vue源码解析不会涉及到虚拟dom,大致会解析以下核心的几个部分，数据驱动,render,组件化,生命周期，异步组件,vue Router，Vuex,和相应式原理，之所以把响应式原理放到最后是因为会深入解析. 在github下载vueJs的源代码 点击此处跳转到github 由于vue基于flow语法，需要提前了解如何使用Flow,Flow 是 facebook 出品的 JavaScript 静态类型检查工具。Vue.js 的源码利用了 Flow 做了静态类型检查，所以了解 Flow 有助于我们阅读源码。:Flow就使用层面来说还是很简单的，即使不会但是了解过静态语言比如JAVA的话，看起来还是可以看懂的.]]></content>
+      <categories>
+        <category>vue源码分析</category>
+      </categories>
+      <tags>
+        <tag>Vue.js源码分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1-从入口开始]]></title>
+    <url>%2F2018%2F06%2F12%2F1-%E4%BB%8E%E5%85%A5%E5%8F%A3%E5%BC%80%E5%A7%8B%2F</url>
+    <content type="text"><![CDATA[开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始开始 开始开始]]></content>
+      <categories>
+        <category>vue源码分析</category>
+      </categories>
+  </entry>
+</search>
