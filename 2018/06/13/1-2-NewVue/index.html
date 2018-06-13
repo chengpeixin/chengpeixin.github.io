@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Vue.js源码分析," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="准备工作及序言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;序什么样的人适合阅读源码？我希望你有最基本javascript的基础，比如闭包，函数柯里化…，使用vue做过项目 vuejs的版本？目前版本为在github上最新的代码，V2.5.17 多久更新一次？每周都会更新，打算将这个源码解析系列当作长期项目来维护 会不会逐行分析代码？不会，这么做会浪费大量时间，不重要的函数会选择性跳过，但大部分">
-<meta name="keywords" content="Vue.js源码分析">
+<meta name="description" content="Vue在哪里在这里会告诉你Vue的来源，是什么样子的首先进入源码目录下的/src/core目录，里面有一个index.js的文件 1234567891011121314151617181920212223242526272829import Vue from &apos;./instance/index&apos;import &amp;#123; initGlobalAPI &amp;#125; from &apos;./global-ap">
 <meta property="og:type" content="article">
-<meta property="og:title" content="0.1-准备工作">
-<meta property="og:url" content="http://yoursite.com/2018/06/12/0-1-准备工作/index.html">
+<meta property="og:title" content="1.2-NewVue">
+<meta property="og:url" content="http://yoursite.com/2018/06/13/1-2-NewVue/index.html">
 <meta property="og:site_name" content="Woodpecker">
-<meta property="og:description" content="准备工作及序言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;序什么样的人适合阅读源码？我希望你有最基本javascript的基础，比如闭包，函数柯里化…，使用vue做过项目 vuejs的版本？目前版本为在github上最新的代码，V2.5.17 多久更新一次？每周都会更新，打算将这个源码解析系列当作长期项目来维护 会不会逐行分析代码？不会，这么做会浪费大量时间，不重要的函数会选择性跳过，但大部分">
+<meta property="og:description" content="Vue在哪里在这里会告诉你Vue的来源，是什么样子的首先进入源码目录下的/src/core目录，里面有一个index.js的文件 1234567891011121314151617181920212223242526272829import Vue from &apos;./instance/index&apos;import &amp;#123; initGlobalAPI &amp;#125; from &apos;./global-ap">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-12T04:41:52.138Z">
+<meta property="og:updated_time" content="2018-06-13T09:05:59.419Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="0.1-准备工作">
-<meta name="twitter:description" content="准备工作及序言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;序什么样的人适合阅读源码？我希望你有最基本javascript的基础，比如闭包，函数柯里化…，使用vue做过项目 vuejs的版本？目前版本为在github上最新的代码，V2.5.17 多久更新一次？每周都会更新，打算将这个源码解析系列当作长期项目来维护 会不会逐行分析代码？不会，这么做会浪费大量时间，不重要的函数会选择性跳过，但大部分">
+<meta name="twitter:title" content="1.2-NewVue">
+<meta name="twitter:description" content="Vue在哪里在这里会告诉你Vue的来源，是什么样子的首先进入源码目录下的/src/core目录，里面有一个index.js的文件 1234567891011121314151617181920212223242526272829import Vue from &apos;./instance/index&apos;import &amp;#123; initGlobalAPI &amp;#125; from &apos;./global-ap">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/12/0-1-准备工作/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/13/1-2-NewVue/"/>
 
 
 
 
 
-  <title>0.1-准备工作 | Woodpecker</title>
+  <title>1.2-NewVue | Woodpecker</title>
   
 
 
@@ -262,12 +261,12 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-vue源码分析" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/12/0-1-准备工作/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/13/1-2-NewVue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="木鸟">
@@ -284,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">0.1-准备工作</h1>
+          <h1 class="post-title" itemprop="name headline">1.2-NewVue</h1>
         
 
         <div class="post-meta">
@@ -296,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-12T12:41:52+08:00">
-                2018-06-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-13T11:13:07+08:00">
+                2018-06-13
               </time>
             
 
@@ -356,17 +355,22 @@
       
 
       
-        <h2 id="准备工作及序言-nbsp-nbsp-nbsp-nbsp"><a href="#准备工作及序言-nbsp-nbsp-nbsp-nbsp" class="headerlink" title="准备工作及序言&nbsp;&nbsp;&nbsp;&nbsp;"></a>准备工作及序言&nbsp;&nbsp;&nbsp;&nbsp;</h2><h3 id="序"><a href="#序" class="headerlink" title="序"></a>序</h3><p><strong>什么样的人适合阅读源码？</strong><br>我希望你有最基本javascript的基础，比如闭包，函数柯里化…，使用vue做过项目</p>
-<p><strong>vuejs的版本？</strong><br>目前版本为在github上最新的代码，V2.5.17</p>
-<p><strong>多久更新一次？</strong><br>每周都会更新，打算将这个源码解析系列当作长期项目来维护</p>
-<p><strong>会不会逐行分析代码？</strong><br>不会，这么做会浪费大量时间，不重要的函数会选择性跳过，但大部分代码还是会说到</p>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>在开始阅读vue源码之前需要做一点准备工作，由于本人的技术能力和精力有限,对编译不太懂，这次的vue源码解析不会涉及到虚拟dom,大致会解析以下核心的几个部分，<code>数据驱动</code>,<code>render</code>,<code>组件化</code>,<code>生命周期</code>，<code>异步组件</code>,<code>vue Router</code>，<code>Vuex</code>,和<code>相应式原理</code>，之所以把响应式原理放到最后是因为会深入解析.</p>
+        <h1 id="Vue在哪里"><a href="#Vue在哪里" class="headerlink" title="Vue在哪里"></a>Vue在哪里</h1><p>在这里会告诉你Vue的来源，是什么样子的<br>首先进入源码目录下的<code>/src/core</code>目录，里面有一个<code>index.js</code>的文件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'./instance/index'</span></span><br><span class="line"><span class="keyword">import</span> &#123; initGlobalAPI &#125; <span class="keyword">from</span> <span class="string">'./global-api/index'</span></span><br><span class="line"><span class="keyword">import</span> &#123; isServerRendering &#125; <span class="keyword">from</span> <span class="string">'core/util/env'</span></span><br><span class="line"><span class="keyword">import</span> &#123; FunctionalRenderContext &#125; <span class="keyword">from</span> <span class="string">'core/vdom/create-functional-component'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 向Vue绑定静态方法，比如Vue.set. Vue.delete Vue.use</span></span><br><span class="line">initGlobalAPI(Vue)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这几行代码不用关注，这是只有在服务端渲染才会使用到</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(Vue.prototype, <span class="string">'$isServer'</span>, &#123;</span><br><span class="line">  get: isServerRendering</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(Vue.prototype, <span class="string">'$ssrContext'</span>, &#123;</span><br><span class="line">  get () &#123;</span><br><span class="line">    <span class="comment">/* istanbul ignore next */</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.$vnode &amp;&amp; <span class="keyword">this</span>.$vnode.ssrContext</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// expose FunctionalRenderContext for ssr runtime helper installation</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(Vue, <span class="string">'FunctionalRenderContext'</span>, &#123;</span><br><span class="line">  value: FunctionalRenderContext</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Vue.version = <span class="string">'__VERSION__'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Vue</span><br></pre></td></tr></table></figure>
+<p>我们会发现在最下方有一行代码 <code>export default Vue</code>，这个被导出的Vue在最上方的<code>import Vue from &#39;./instance/index&#39;</code>中导入进来，继续进入到<code>/instance/index.js</code>，在这个文件中我们会看到Vue是如何定义的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; initMixin &#125; <span class="keyword">from</span> <span class="string">'./init'</span></span><br><span class="line"><span class="keyword">import</span> &#123; stateMixin &#125; <span class="keyword">from</span> <span class="string">'./state'</span></span><br><span class="line"><span class="keyword">import</span> &#123; renderMixin &#125; <span class="keyword">from</span> <span class="string">'./render'</span></span><br><span class="line"><span class="keyword">import</span> &#123; eventsMixin &#125; <span class="keyword">from</span> <span class="string">'./events'</span></span><br><span class="line"><span class="keyword">import</span> &#123; lifecycleMixin &#125; <span class="keyword">from</span> <span class="string">'./lifecycle'</span></span><br><span class="line"><span class="keyword">import</span> &#123; warn &#125; <span class="keyword">from</span> <span class="string">'../util/index'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Vue</span> (<span class="params">options</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (process.env.NODE_ENV !== <span class="string">'production'</span> &amp;&amp;</span><br><span class="line">  <span class="comment">// 这里会判断你在使用Vue的时候是否用new的方式，否则会抛出一个警告</span></span><br><span class="line">    !(<span class="keyword">this</span> <span class="keyword">instanceof</span> Vue)</span><br><span class="line">  ) &#123;</span><br><span class="line">    warn(<span class="string">'Vue is a constructor and should be called with the `new` keyword'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>._init(options)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 每一个Mixin实际上是向Vue中混入一些定义好的方法</span></span><br><span class="line">initMixin(Vue)</span><br><span class="line">stateMixin(Vue)</span><br><span class="line">eventsMixin(Vue)</span><br><span class="line">lifecycleMixin(Vue)</span><br><span class="line">renderMixin(Vue)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Vue</span><br></pre></td></tr></table></figure>
+<p>在上面的代码中，我们可以看到定义了一个Vue的类，在这个类中（除去判断逻辑，说明在注释中有）我们当前的Vue的实例（this），调用了init的方法，将new Vue时传入的参数传递过去，这个_init方法在<code>./init.js</code>中被定义<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">Vue.prototype._init = <span class="function"><span class="keyword">function</span> (<span class="params">options ?: Object</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> vm: Component = <span class="keyword">this</span></span><br><span class="line">  <span class="comment">// a uid</span></span><br><span class="line">  vm._uid = uid++</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> startTag, endTag</span><br><span class="line">  <span class="comment">/* istanbul ignore if */</span></span><br><span class="line">  <span class="keyword">if</span> (process.env.NODE_ENV !== <span class="string">'production'</span> &amp;&amp; config.performance &amp;&amp; mark) &#123;</span><br><span class="line">    startTag = <span class="string">`vue-perf-start:<span class="subst">$&#123;vm._uid&#125;</span>`</span></span><br><span class="line">    endTag = <span class="string">`vue-perf-end:<span class="subst">$&#123;vm._uid&#125;</span>`</span></span><br><span class="line">    mark(startTag)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// a flag to avoid this being observed</span></span><br><span class="line">  vm._isVue = <span class="literal">true</span></span><br><span class="line">  <span class="comment">// merge options</span></span><br><span class="line">  <span class="comment">// 混入options会在后面章节中重点说</span></span><br><span class="line">  <span class="keyword">if</span> (options &amp;&amp; options._isComponent) &#123;</span><br><span class="line">    <span class="comment">// optimize internal component instantiation</span></span><br><span class="line">    <span class="comment">// since dynamic options merging is pretty slow, and none of the</span></span><br><span class="line">    <span class="comment">// internal component options needs special treatment.</span></span><br><span class="line">    initInternalComponent(vm, options)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    vm.$options = mergeOptions(</span><br><span class="line">      resolveConstructorOptions(vm.constructor),</span><br><span class="line">      options || &#123;&#125;,</span><br><span class="line">      vm</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 经过上面的逻辑后，vm.$options就等于init时传入的options，</span></span><br><span class="line">  <span class="comment">// vm.$options.el = new Vue时传入的el</span></span><br><span class="line">  <span class="comment">// vm.$options.data = new Vue时传入的data</span></span><br><span class="line">  <span class="comment">/* istanbul ignore else */</span></span><br><span class="line">  <span class="keyword">if</span> (process.env.NODE_ENV !== <span class="string">'production'</span>) &#123;</span><br><span class="line">    initProxy(vm)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    vm._renderProxy = vm</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// expose real self</span></span><br><span class="line">  vm._self = vm</span><br><span class="line">  initLifecycle(vm)</span><br><span class="line">  initEvents(vm)</span><br><span class="line">  initRender(vm)</span><br><span class="line">  callHook(vm, <span class="string">'beforeCreate'</span>)</span><br><span class="line">  initInjections(vm) <span class="comment">// resolve injections before data/props</span></span><br><span class="line">  initState(vm)</span><br><span class="line">  initProvide(vm) <span class="comment">// resolve provide after data/props</span></span><br><span class="line">  callHook(vm, <span class="string">'created'</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* istanbul ignore if */</span></span><br><span class="line">  <span class="keyword">if</span> (process.env.NODE_ENV !== <span class="string">'production'</span> &amp;&amp; config.performance &amp;&amp; mark) &#123;</span><br><span class="line">    vm._name = formatComponentName(vm, <span class="literal">false</span>)</span><br><span class="line">    mark(endTag)</span><br><span class="line">    measure(<span class="string">`vue <span class="subst">$&#123;vm._name&#125;</span> init`</span>, startTag, endTag)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 在这里挂载传入的el</span></span><br><span class="line">  <span class="keyword">if</span> (vm.$options.el) &#123;</span><br><span class="line">    vm.$mount(vm.$options.el)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码其实做了这么几件事情</p>
 <ol>
-<li><p>在github下载vueJs的源代码 <a href="https://github.com/vuejs/vue" target="_blank" rel="noopener">点击此处跳转到github</a></p>
-</li>
-<li><p>由于vue基于flow语法，需要提前了解如何使用<a href="https://flow.org/en/docs/getting-started/" target="_blank" rel="noopener">Flow</a>,<a href="https://flow.org/en/docs/getting-started/" target="_blank" rel="noopener">Flow</a> 是 facebook 出品的 JavaScript 静态类型检查工具。Vue.js 的源码利用了 Flow 做了静态类型检查，所以了解 Flow 有助于我们阅读源码。:Flow就使用层面来说还是很简单的，即使不会但是了解过静态语言比如<code>JAVA</code>的话，看起来还是可以看懂的.</p>
-</li>
+<li>合并配置</li>
+<li>初始化生命周期</li>
+<li>初始化事件中心</li>
+<li>初始化渲染 </li>
+<li>初始化data,props. computed等</li>
 </ol>
+<h3 id="到此New-Vue-已经完成了"><a href="#到此New-Vue-已经完成了" class="headerlink" title="到此New Vue 已经完成了"></a>到此New Vue 已经完成了</h3><p>Vue把不同功能的函数分开操作，这种逻辑值得我们学习</p>
+<p><strong>如果你不会或者不了解<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" rel="noopener"><code>Object.defineProperty()</code></a>这个方法的话建议去<a href="https://www.jianshu.com/p/3b72db13a65d" target="_blank" rel="noopener">这里</a>看一下简单的介绍和使用，不然在接下来的源码分析过程中会很吃力，Vue内部的响应式的基本原理就是基于这个方法</strong></p>
+<p>下一篇会进入<code>initState(vm)</code>这个函数内部查看是如何将在<code>data</code>内部定义的参数可以在<code>methods</code>使用<code>this</code>的方式查看使用</p>
 
       
     </div>
@@ -382,12 +386,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Vue-js源码分析/" rel="tag"># Vue.js源码分析</a>
-          
-        </div>
-      
 
       
       
@@ -397,8 +395,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/12/1.1-从入口开始/" rel="next" title="1.1-从入口开始">
-                <i class="fa fa-chevron-left"></i> 1.1-从入口开始
+              <a href="/2018/06/12/0-1-准备工作/" rel="next" title="0.1-准备工作">
+                <i class="fa fa-chevron-left"></i> 0.1-准备工作
               </a>
             
           </div>
@@ -406,10 +404,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/13/1-2-NewVue/" rel="prev" title="1.2-NewVue">
-                1.2-NewVue <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -560,7 +554,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作及序言-nbsp-nbsp-nbsp-nbsp"><span class="nav-number">1.</span> <span class="nav-text">准备工作及序言    </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#序"><span class="nav-number">1.1.</span> <span class="nav-text">序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#说明"><span class="nav-number">1.2.</span> <span class="nav-text">说明</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue在哪里"><span class="nav-number">1.</span> <span class="nav-text">Vue在哪里</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#到此New-Vue-已经完成了"><span class="nav-number">1.0.1.</span> <span class="nav-text">到此New Vue 已经完成了</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
