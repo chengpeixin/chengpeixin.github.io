@@ -79,16 +79,19 @@
 
 
 
-<meta name="description" content="代码就像音符">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Woodpecker">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="初始化数据中心在init.js中，在初始化一堆东西的时候，有这么一行代码在上篇讲述的一堆初始化中会调用state.js中的initState方法，这篇文章会过一下state.js的大致流程 initState 在state.js中会发现导出一个函数，函数名为initState 123456789101112131415 export function initState(vm: Component">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1.3-初始化数据中心">
+<meta property="og:url" content="http://yoursite.com/2018/06/19/1-3-初始化数据中心/index.html">
 <meta property="og:site_name" content="Woodpecker">
-<meta property="og:description" content="代码就像音符">
+<meta property="og:description" content="初始化数据中心在init.js中，在初始化一堆东西的时候，有这么一行代码在上篇讲述的一堆初始化中会调用state.js中的initState方法，这篇文章会过一下state.js的大致流程 initState 在state.js中会发现导出一个函数，函数名为initState 123456789101112131415 export function initState(vm: Component">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/06/19/1-3-初始化数据中心/init.png">
+<meta property="og:updated_time" content="2018-06-20T03:54:44.835Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Woodpecker">
-<meta name="twitter:description" content="代码就像音符">
+<meta name="twitter:title" content="1.3-初始化数据中心">
+<meta name="twitter:description" content="初始化数据中心在init.js中，在初始化一堆东西的时候，有这么一行代码在上篇讲述的一堆初始化中会调用state.js中的initState方法，这篇文章会过一下state.js的大致流程 initState 在state.js中会发现导出一个函数，函数名为initState 123456789101112131415 export function initState(vm: Component">
+<meta name="twitter:image" content="http://yoursite.com/2018/06/19/1-3-初始化数据中心/init.png">
 
 
 
@@ -118,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/19/1-3-初始化数据中心/"/>
 
 
 
 
 
-  <title>Woodpecker</title>
+  <title>1.3-初始化数据中心 | Woodpecker</title>
   
 
 
@@ -143,8 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -251,9 +253,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -283,9 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/19/1-3-初始化数据中心/" itemprop="url">1.3-初始化数据中心</a></h1>
+          <h1 class="post-title" itemprop="name headline">1.3-初始化数据中心</h1>
         
 
         <div class="post-meta">
@@ -357,19 +357,13 @@
       
 
       
-        
-          
-          初始化数据中心在init.js中，在初始化一堆东西的时候，有这么一行代码在上篇讲述的一堆初始化中会调用state.js中的initState方法，这篇文章会过一下state.js的大致流程
-initState 在state.js中会发现导出一个函数，函数名为initState 12345678910
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/19/1-3-初始化数据中心/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h1 id="初始化数据中心"><a href="#初始化数据中心" class="headerlink" title="初始化数据中心"></a>初始化数据中心</h1><p>在<code>init.js</code>中，在初始化一堆东西的时候，有这么一行代码<br><img src="/2018/06/19/1-3-初始化数据中心/init.png"><br>在上篇讲述的一堆初始化中会调用<code>state.js</code>中的<code>initState</code>方法，这篇文章会过一下<code>state.js</code>的大致流程</p>
+<h2 id="initState"><a href="#initState" class="headerlink" title="initState"></a>initState</h2><p> 在<code>state.js</code>中会发现导出一个函数，函数名为<code>initState</code><br> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">initState</span>(<span class="params">vm: Component</span>) </span>&#123;</span><br><span class="line">  vm._watchers = []</span><br><span class="line">  <span class="keyword">const</span> opts = vm.$options</span><br><span class="line">  <span class="keyword">if</span> (opts.props) initProps(vm, opts.props)</span><br><span class="line">  <span class="keyword">if</span> (opts.methods) initMethods(vm, opts.methods)</span><br><span class="line">  <span class="keyword">if</span> (opts.data) &#123;</span><br><span class="line">    initData(vm)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    observe(vm._data = &#123;&#125;, <span class="literal">true</span> <span class="comment">/* asRootData */</span> )</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (opts.computed) initComputed(vm, opts.computed)</span><br><span class="line">  <span class="keyword">if</span> (opts.watch &amp;&amp; opts.watch !== nativeWatch) &#123;</span><br><span class="line">    initWatch(vm, opts.watch)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p> 上面的代码 :<br> 第一步会创建一个watch数组，这个是关于响应式部分，以后会讲到<br> 第二步拿到在new Vue 时传入的对象<br> 第三步判断当前是否存在<code>props</code>，存在的话则初始化<code>props</code><br> 第四步判断当前是否存在<code>methods</code>，存在的话则初始化<code>methods</code><br> 第五步判断当前是否存在<code>data</code>，存在的话则初始化对象（也就是数据），否则会创建一个空对象作为根数据，也就是你当前生命还是没生命这个<code>data</code>，Vue内部都会创建一个<code>_data</code>的私有对象，并且加入到观察者模式中去(其实这个<code>_data</code>和<code>data</code>是一模一样的，只不过<code>_data</code>是一个私有对象)<br> 第六步判断<code>computed</code>，存在则初始化<br> 第七步则判断<code>watch</code>，存在则初始化</p>
+<h2 id="initData"><a href="#initData" class="headerlink" title="initData"></a>initData</h2><p> 我们只需要关注如何初始化数据就可以了<br> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">initData</span>(<span class="params">vm: Component</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> data = vm.$options.data</span><br><span class="line">  data = vm._data = <span class="keyword">typeof</span> data === <span class="string">'function'</span> ?</span><br><span class="line">    getData(data, vm) :</span><br><span class="line">    data || &#123;&#125;</span><br><span class="line">  <span class="comment">// 忽略这个判断逻辑</span></span><br><span class="line">  <span class="keyword">if</span> (!isPlainObject(data)) &#123;</span><br><span class="line">    data = &#123;&#125;</span><br><span class="line">    process.env.NODE_ENV !== <span class="string">'production'</span> &amp;&amp; warn(</span><br><span class="line">      <span class="string">'data functions should return an object:\n'</span> +</span><br><span class="line">      <span class="string">'https://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function'</span>,</span><br><span class="line">      vm</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// proxy data on instance</span></span><br><span class="line">  <span class="keyword">const</span> keys = <span class="built_in">Object</span>.keys(data)</span><br><span class="line">  <span class="keyword">const</span> props = vm.$options.props</span><br><span class="line">  <span class="keyword">const</span> methods = vm.$options.methods</span><br><span class="line">  <span class="keyword">let</span> i = keys.length</span><br><span class="line">  <span class="keyword">while</span> (i--) &#123;</span><br><span class="line">    <span class="keyword">const</span> key = keys[i]</span><br><span class="line">    <span class="keyword">if</span> (process.env.NODE_ENV !== <span class="string">'production'</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (methods &amp;&amp; hasOwn(methods, key)) &#123;</span><br><span class="line">        warn(</span><br><span class="line">          <span class="string">`Method "<span class="subst">$&#123;key&#125;</span>" has already been defined as a data property.`</span>,</span><br><span class="line">          vm</span><br><span class="line">        )</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (props &amp;&amp; hasOwn(props, key)) &#123;</span><br><span class="line">      process.env.NODE_ENV !== <span class="string">'production'</span> &amp;&amp; warn(</span><br><span class="line">        <span class="string">`The data property "<span class="subst">$&#123;key&#125;</span>" is already declared as a prop. `</span> +</span><br><span class="line">        <span class="string">`Use prop default value instead.`</span>,</span><br><span class="line">        vm</span><br><span class="line">      )</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!isReserved(key)) &#123;</span><br><span class="line">      proxy(vm, <span class="string">`_data`</span>, key)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// observe data</span></span><br><span class="line">  observe(data, <span class="literal">true</span> <span class="comment">/* asRootData */</span> )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p> 在经过<code>initState</code>函数时会初始化数据，我们假设此时已经传入了数据，如下<br> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data()&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      name:<span class="string">"灰太狼"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p> 第一步会拿到这个传入的<code>data</code><br> 第二步做一个判断，当前传入的data是一个函数还是一个对象，如果是函数的话会调用<code>getData</code>，将<code>data</code>和<code>vm</code>传入，这个函数会返回经过<code>observer</code>的对象<br> 第三步将所有的<code>data</code>作为一个数组(此时<code>keys=[name]</code>)，并且拿到<code>methods</code>和<code>props</code>，使用<code>data</code>的<code>key</code>循环进行判断，如果当前的<code>props</code>没有与<code>key</code>相同的<code>key</code>的话，则使用<code>proxy</code>代理到<code>_data</code>中，也就是说我们打印<code>vm.name</code>会得到<code>&quot;灰太狼&quot;</code>，我们打印<code>vm._data</code>也会得到<code>灰太狼</code><br> 第四步也是最后一步，把所有的<code>data</code>进行一个<code>observer</code>(观察者模式),这步也是<strong>响应式</strong>的重要的一步(后面会讲解)</p>
+<h3 id="下篇预告render函数"><a href="#下篇预告render函数" class="headerlink" title="下篇预告render函数"></a>下篇预告<code>render</code>函数</h3>
       
     </div>
     
@@ -386,161 +380,28 @@ initState 在state.js中会发现导出一个函数，函数名为initState 1234
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-vue源码分析" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/13/1-2-NewVue/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="木鸟">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/touxiang.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Woodpecker">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/13/1-2-NewVue/" itemprop="url">1.2-NewVue</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-13T11:13:07+08:00">
-                2018-06-13
-              </time>
+              <a href="/2018/06/13/1-2-NewVue/" rel="next" title="1.2-NewVue">
+                <i class="fa fa-chevron-left"></i> 1.2-NewVue
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue源码分析/" itemprop="url" rel="index">
-                    <span itemprop="name">vue源码分析</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          Vue在哪里在这里会告诉你Vue的来源，是什么样子的首先进入源码目录下的/src/core目录，里面有一个index.js的文件
-1234567891011121314151617181920212223242526272829import Vue from './instance/index'im
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/13/1-2-NewVue/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -550,315 +411,27 @@ initState 在state.js中会发现导出一个函数，函数名为initState 1234
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/12/0-1-准备工作/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="木鸟">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/touxiang.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Woodpecker">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/12/0-1-准备工作/" itemprop="url">0.1-准备工作</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-12T12:41:52+08:00">
-                2018-06-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue源码分析/" itemprop="url" rel="index">
-                    <span itemprop="name">vue源码分析</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          准备工作及序言&nbsp;&nbsp;&nbsp;&nbsp;序什么样的人适合阅读源码？我希望你有最基本javascript的基础，比如闭包，函数柯里化…，使用vue做过项目
-vuejs的版本？目前版本为在github上最新的代码，V2.5.17
-多久更新一次？每周都会更新，打算将这个源码解析系列当
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/12/0-1-准备工作/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
 
 
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-vue源码分析" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/12/1.1-从入口开始/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="木鸟">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/touxiang.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Woodpecker">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/12/1.1-从入口开始/" itemprop="url">1.1-从入口开始</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-12T11:07:29+08:00">
-                2018-06-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue源码分析/" itemprop="url" rel="index">
-                    <span itemprop="name">vue源码分析</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Vue源码目录设计在把github上的代码clone之后，会发现Vue.js的源码工程非常庞大，但是不用担心，我们只需要分析src目录下的代码Vue.js 的源码都在 src 目录下，其目录结构如下1234567src  ├── compiler   # 编译相关  ├── core       #
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/12/1.1-从入口开始/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzI1Mi8xMzc4Ng=="></div>
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
 
   
 
 
-          </div>
-          
-
-
-          
 
         </div>
         
@@ -879,8 +452,17 @@ vuejs的版本？目前版本为在github上最新的代码，V2.5.17
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -954,6 +536,22 @@ vuejs的版本？目前版本为在github上最新的代码，V2.5.17
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初始化数据中心"><span class="nav-number">1.</span> <span class="nav-text">初始化数据中心</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#initState"><span class="nav-number">1.1.</span> <span class="nav-text">initState</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#initData"><span class="nav-number">1.2.</span> <span class="nav-text">initData</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下篇预告render函数"><span class="nav-number">1.2.1.</span> <span class="nav-text">下篇预告render函数</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1094,6 +692,10 @@ vuejs的版本？目前版本为在github上最新的代码，V2.5.17
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1122,6 +724,17 @@ vuejs的版本？目前版本为在github上最新的代码，V2.5.17
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
